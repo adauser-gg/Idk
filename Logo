@@ -14,11 +14,17 @@ local toggleButton = Instance.new("ImageButton")
 toggleButton.Name = "ToggleMenuButton"
 toggleButton.Size = UDim2.new(0, 100, 0, 100)
 toggleButton.Position = UDim2.new(0, 20, 0.5, -50)
-toggleButton.Image = "rbxassetid://135465268726497" -- your asset ID
-toggleButton.BackgroundTransparency = 1
+toggleButton.Image = "rbxassetid://135465268726497"
+toggleButton.BackgroundTransparency = 0
+toggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 toggleButton.Draggable = true
 toggleButton.Active = true
 toggleButton.Parent = screenGui
+
+-- Rounded corner for toggle button
+local toggleCorner = Instance.new("UICorner")
+toggleCorner.CornerRadius = UDim.new(0, 16)
+toggleCorner.Parent = toggleButton
 
 -- Create menu panel
 local menuPanel = Instance.new("Frame")
@@ -28,6 +34,11 @@ menuPanel.Position = UDim2.new(0.5, -150, 0.5, -100)
 menuPanel.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
 menuPanel.Visible = false
 menuPanel.Parent = screenGui
+
+-- Rounded corner for menu panel
+local panelCorner = Instance.new("UICorner")
+panelCorner.CornerRadius = UDim.new(0, 20)
+panelCorner.Parent = menuPanel
 
 -- Create Discord button
 local discordButton = Instance.new("TextButton")
@@ -41,7 +52,12 @@ discordButton.TextSize = 20
 discordButton.Text = "Join Discord"
 discordButton.Parent = menuPanel
 
--- Open Discord link when clicked (works in Studio as prompt)
+-- Rounded corner for Discord button
+local buttonCorner = Instance.new("UICorner")
+buttonCorner.CornerRadius = UDim.new(0, 12)
+buttonCorner.Parent = discordButton
+
+-- Copy Discord link to clipboard on click
 discordButton.MouseButton1Click:Connect(function()
 	local success, result = pcall(function()
 		setclipboard("https://discord.gg/YOUR_INVITE_CODE")
