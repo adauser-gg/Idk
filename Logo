@@ -1,0 +1,57 @@
+-- LocalScript (place in StarterPlayerScripts or StarterGui)
+
+local player = game.Players.LocalPlayer
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- Create main GUI
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "CustomMenuGUI"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = playerGui
+
+-- Create draggable toggle button
+local toggleButton = Instance.new("ImageButton")
+toggleButton.Name = "ToggleMenuButton"
+toggleButton.Size = UDim2.new(0, 100, 0, 100)
+toggleButton.Position = UDim2.new(0, 20, 0.5, -50)
+toggleButton.Image = "rbxassetid://135465268726497" -- your asset ID
+toggleButton.BackgroundTransparency = 1
+toggleButton.Draggable = true
+toggleButton.Active = true
+toggleButton.Parent = screenGui
+
+-- Create menu panel
+local menuPanel = Instance.new("Frame")
+menuPanel.Name = "MenuPanel"
+menuPanel.Size = UDim2.new(0, 300, 0, 200)
+menuPanel.Position = UDim2.new(0.5, -150, 0.5, -100)
+menuPanel.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+menuPanel.Visible = false
+menuPanel.Parent = screenGui
+
+-- Create Discord button
+local discordButton = Instance.new("TextButton")
+discordButton.Name = "JoinDiscord"
+discordButton.Size = UDim2.new(0, 200, 0, 50)
+discordButton.Position = UDim2.new(0.5, -100, 0.5, -25)
+discordButton.BackgroundColor3 = Color3.fromRGB(88, 101, 242)
+discordButton.TextColor3 = Color3.new(1, 1, 1)
+discordButton.Font = Enum.Font.GothamBold
+discordButton.TextSize = 20
+discordButton.Text = "Join Discord"
+discordButton.Parent = menuPanel
+
+-- Open Discord link when clicked (works in Studio as prompt)
+discordButton.MouseButton1Click:Connect(function()
+	local success, result = pcall(function()
+		setclipboard("https://discord.gg/YOUR_INVITE_CODE")
+	end)
+	if success then
+		print("Discord link copied to clipboard!")
+	end
+end)
+
+-- Toggle menu visibility
+toggleButton.MouseButton1Click:Connect(function()
+	menuPanel.Visible = not menuPanel.Visible
+end)
