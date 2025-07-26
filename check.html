@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OONDIETY</title>
+
+  <!-- Font: Bitcount Prop Double -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&family=Special+Gothic+Expanded+One&display=swap');
+      
+.tagline {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  color: rgba(255, 255, 255, 0.92); /* very light white with red tint */
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 70px; /* adjust based on layout */
+  left: 80px; /* match left offset of title */
+  z-index: 3;
+}
+
+.tagline {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  color: #490fd1;
+  width:80vw;
+  font-size: 2.9rem;
+  letter-spacing: 2px; 
+  position: absolute;
+  top: 25%; /* slightly above center */
+  left:10%;
+  
+  /*transform: translate(-50%, -50%); */
+  z-index: 3;
+}
+
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: #111;
+      overflow: hidden;
+      font-family: 'inter', sans-serif;
+      font-weight:600;
+      position: relative;
+    }
+
+    /* Header: logo + text */
+    .header {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      display: flex;
+      align-items: flex-end;
+      z-index: 2;
+    }
+
+    .logo {
+      width: 50px;
+      height: auto;
+      animation: glow 2s ease-in-out infinite;
+      margin-right: 12px;
+    }
+
+    .title {
+      font-size: 44px;
+      color: #fff5f5; /* Very light red-tinted white */
+      letter-spacing: 2px;
+      position: relative;
+      top: 4px; /* Pushes text a little lower for better alignment */
+    }
+
+    /* Dark red glowing pulse for logo */
+    @keyframes glow {
+      0%, 100% {
+        filter: drop-shadow(0 0 5px #8B0000);
+      }
+      50% {
+        filter: drop-shadow(0 0 20px #8B0000);
+      }
+    }
+
+    /* Floating circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.8;
+    }
+
+    .yellow {
+      background: #4e8087;
+      width: 90px;
+      height: 90px;
+      top: 25%;
+      left: 20%;
+      animation-delay: 0s;
+    }
+
+    .cyan {
+      background: #702e4d;
+      width: 120px;
+      height: 120px;
+      top: 55%;
+      left: 65%;
+      animation-delay: 2s;
+    }
+
+    .purple {
+      background: #4B0082;
+      width: 110px;
+      height: 110px;
+      bottom: 5%;
+      left: 5%;
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-50px); }
+    }
+
+    /* Blur overlay */
+    .blur-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #8B0000);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px #8B0000);
+  }
+}
+
+@keyframes timedShake {
+  0%, 74% {
+    transform: translate(0, 0);
+  }
+
+  /* High-frequency vibration between 75% and 100% */
+  75% { transform: translate(-1px, 0); }
+  76% { transform: translate(1px, 0); }
+  77% { transform: translate(-1px, 0); }
+  78% { transform: translate(1px, 0); }
+  79% { transform: translate(-1px, 0); }
+  80% { transform: translate(1px, 0); }
+  81% { transform: translate(-1px, 0); }
+  82% { transform: translate(1px, 0); }
+  83% { transform: translate(-1px, 0); }
+  84% { transform: translate(1px, 0); }
+  85% { transform: translate(-1px, 0); }
+  86% { transform: translate(1px, 0); }
+  87% { transform: translate(-1px, 0); }
+  88% { transform: translate(1px, 0); }
+  89% { transform: translate(-1px, 0); }
+  90% { transform: translate(1px, 0); }
+  91% { transform: translate(-1px, 0); }
+  92% { transform: translate(1px, 0); }
+  93% { transform: translate(-1px, 0); }
+  94% { transform: translate(1px, 0); }
+  95% { transform: translate(-1px, 0); }
+  96% { transform: translate(1px, 0); }
+  97% { transform: translate(-1px, 0); }
+  98% { transform: translate(1px, 0); }
+  99% { transform: translate(-1px, 0); }
+  100% { transform: translate(0, 0); }
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  animation:
+    glow 2s ease-in-out infinite,
+    timedShake 4s linear infinite;
+}
+
+.pro-btn {
+  font-family: 'Poppins', sans-serif;
+  background-color:#2025c7;
+  font-size: 1rem;
+  padding: 12px 28px;
+  color: #fff;
+  background-color: #222;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 60%;
+  left: 10%;
+  z-index: 3;
+
+  /* Mobile optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  background-color: #2025c7
+}
+
+
+
+.pro-btn:active {
+  transform: translateY(0);
+  background-color: #111;
+}
+
+
+
+.dis {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  padding: 12px 28px;
+  color: #fff;
+  background-color: #222;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  z-index: 3;
+
+  /* Mobile optimization */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+
+
+.dis:active {
+  transform: translateY(0);
+  background-color: #111;
+}
+
+
+
+.tagline {
+  font-family: 'Special Gothic Expanded One', sans-serif;
+  font-size: 13vw;
+  position: absolute;
+  top: 20%;
+  color:white;
+  
+  z-index: 3;
+
+  padding: 0.4em 0;
+  line-height: 1.2;
+
+  background: linear-gradient(
+    90deg,
+    #662eff,
+    #5314ff, 
+    #3c06cf, 
+    #662eff
+  );
+  
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 6s linear infinite;
+ /* white-space: nowrap; */
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+
+
+
+
+
+
+  </style>
+
+</head>
+<body>
+    
+  <!-- Header -->
+  <div class="header">
+    <img class="logo" src="https://cdn.discordapp.com/attachments/1368857980233060405/1398724980388270302/Icon.png?ex=688667a6&is=68851626&hm=2769363bcf2af9c2bbd465747c7e2a90044588cebe01562e7d97ec84f5dd0fc7&" alt="Logo">
+    <div class="title">OONDIETY</div>
+  </div>
+<p class="tagline">Fulfill your scripting needs..</p>
+<button class="pro-btn">Get Script</button>
+<button class="dis">Discord</button>
+
+  <!-- Floating Circles -->
+  <div class="circle yellow"></div>
+  <div class="circle cyan"></div>
+  <div class="circle purple"></div>
+
+  <!-- Blur Layer -->
+  <div class="blur-overlay"></div>
+</body>
+</html>
